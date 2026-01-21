@@ -1,4 +1,4 @@
 - fps
-- 改善 farey_tech.hpp 文件内封装（暂时无解决方法）
-- 完善手写哈希表，支持自定义 hash 函数
+- 改善 farey_tech.hpp 文件内封装
+- 完善手写哈希表，支持自定义 hash 函数，支持 range-based for
 - 支持多测清空
