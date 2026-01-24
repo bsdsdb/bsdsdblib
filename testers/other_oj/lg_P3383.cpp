@@ -4,8 +4,7 @@
 #include "../../numtheo/euler_sieve.hpp"
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 n, q;
 	std::cin >> n >> q;
 	numtheo::enum_prime(n);

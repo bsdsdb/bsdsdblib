@@ -109,12 +109,8 @@ namespace numtheo {
 		}
 		return qpow(x, MIP::mod() - 2, MIP(1, false));
 	}
-	template<i64 P, bool _64> ModIntPr<P, _64> operator/(const ModIntPr<P, _64> x, const ModIntPr<P, _64> y) {
-		return x * inv(y);
-	}
-	template<i64 P, bool _64> ModIntPr<P, _64> &operator/=(ModIntPr<P, _64> &x, const ModIntPr<P, _64> y) {
-		return x *= inv(y);
-	}
+	template<i64 P, bool _64> ModIntPr<P, _64> operator/(const ModIntPr<P, _64> x, const ModIntPr<P, _64> y) { return x * inv(y); }
+	template<i64 P, bool _64> ModIntPr<P, _64> &operator/=(ModIntPr<P, _64> &x, const ModIntPr<P, _64> y) { return x *= inv(y); }
 	#pragma endregion
 	#pragma region // discrete log
 	template<i64 P, bool _64> void fast_ln_preproc(ModIntPr<P, _64> g) {

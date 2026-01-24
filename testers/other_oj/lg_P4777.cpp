@@ -5,8 +5,7 @@
 #include "../../numtheo/excrt.hpp"
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 n;
 	std::cin >> n;
 	std::vector<u64> p(n), a(n);

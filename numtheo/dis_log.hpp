@@ -13,8 +13,7 @@
 #include "prod_funcs.hpp"
 
 namespace numtheo {
-	template<i64 P, bool _64>
-	std::optional<std::conditional_t<_64, u64, u32>> dis_log(ModIntPr<P, _64> a, ModIntPr<P, _64> b) {
+	template<i64 P, bool _64> std::optional<std::conditional_t<_64, u64, u32>> dis_log(ModIntPr<P, _64> a, ModIntPr<P, _64> b) {
 		using MIP = ModIntPr<P, _64>;
 		using val_t = MIP::val_t;
 		using mul_t = MIP::mul_t;
@@ -32,8 +31,7 @@ namespace numtheo {
 		}
 		return std::nullopt;
 	}
-	template<i64 P, bool _64> std::vector<std::optional<std::conditional_t<_64, u64, u32>>>
-	dis_logs(ModIntPr<P, _64> a, const std::vector<ModIntPr<P, _64>> &b) {
+	template<i64 P, bool _64> std::vector<std::optional<std::conditional_t<_64, u64, u32>>> dis_logs(ModIntPr<P, _64> a, const std::vector<ModIntPr<P, _64>> &b) {
 		using MIP = ModIntPr<P, _64>;
 		using val_t = MIP::val_t;
 		using mul_t = MIP::mul_t;
@@ -64,12 +62,9 @@ namespace numtheo {
 		}
 		return ret;
 	}
-	template<i64 P, bool _64> std::conditional_t<_64, u64, u32> ord(ModIntPr<P, _64> x) {
-		return dis_log(x, ModIntPr<P, _64>(1, false));
-	}
+	template<i64 P, bool _64> std::conditional_t<_64, u64, u32> ord(ModIntPr<P, _64> x) { return dis_log(x, ModIntPr<P, _64>(1, false)); }
 
-	template<i64 P, bool _64>
-	std::optional<std::conditional_t<_64, u64, u32>> dis_log(ModInt<P, _64> a, ModInt<P, _64> b) {
+	template<i64 P, bool _64> std::optional<std::conditional_t<_64, u64, u32>> dis_log(ModInt<P, _64> a, ModInt<P, _64> b) {
 		using MI = ModInt<P, _64>;
 		using val_t = MI::val_t;
 		using mul_t = MI::mul_t;
@@ -107,8 +102,7 @@ namespace numtheo {
 		}
 		return ret;
 	}
-	template<i64 P, bool _64> std::vector<std::optional<std::conditional_t<_64, u64, u32>>>
-	dis_logs(ModInt<P, _64> a, const std::vector<ModInt<P, _64>> &b) {
+	template<i64 P, bool _64> std::vector<std::optional<std::conditional_t<_64, u64, u32>>> dis_logs(ModInt<P, _64> a, const std::vector<ModInt<P, _64>> &b) {
 		using MI = ModInt<P, _64>;
 		using val_t = MI::val_t;
 		using mul_t = MI::mul_t;

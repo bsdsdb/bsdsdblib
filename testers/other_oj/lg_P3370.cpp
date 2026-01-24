@@ -5,8 +5,7 @@
 #include "../../ds/hash_table.hpp"
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	ds::HashTable<std::string, bool> ht(4194304);
 	u32 N, ans = 0;
 	std::cin >> N;

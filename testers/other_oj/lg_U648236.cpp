@@ -7,6 +7,7 @@
 using MI = numtheo::ModInt64<-1>;
 
 int main() {
+	ioopt();
 	u64 p;
 	std::cin >> p;
 	MI::set_mod(p);

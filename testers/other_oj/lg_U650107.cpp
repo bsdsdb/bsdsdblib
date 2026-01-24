@@ -4,6 +4,7 @@
 #include "../../general/fast_pow.hpp"
 
 int main() {
+	ioopt();
 	u64 a;
 	std::cin >> a;
 	O1pow<u64> pw(a, (1ull << 46) - 1);

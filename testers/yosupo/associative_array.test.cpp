@@ -5,8 +5,7 @@
 #include "../../ds/hash_table.hpp"
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 q;
 	std::cin >> q;
 	static ds::HashTable<u64, u64> t;

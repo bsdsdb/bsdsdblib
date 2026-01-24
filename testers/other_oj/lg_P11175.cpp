@@ -8,8 +8,7 @@
 using MIP = numtheo::ModIntPr32<-1>;
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 p;
 	std::cin >> p;
 	MIP::set_mod(p);

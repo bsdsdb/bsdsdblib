@@ -50,9 +50,7 @@ namespace numtheo {
 			}
 		}
 	}
-	template<i128::liftable_unsigned T> std::optional<T> min_prim_root(T m) {
-		return min_prim_root(m, phi(m), prime_factors(phi(m)));
-	}
+	template<i128::liftable_unsigned T> std::optional<T> min_prim_root(T m) {return min_prim_root(m, phi(m), prime_factors(phi(m)));}
 	template<i128::liftable_unsigned T> std::vector<T> prim_roots(T m) {
 		if (m == 2) {
 			return {1};

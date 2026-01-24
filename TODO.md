@@ -2,4 +2,4 @@
 - 改善 farey_tech.hpp 文件内封装
 - 用 range？我将学习 c++20
 - 支持多测清空
-- 短函数压行
+- clang-format？

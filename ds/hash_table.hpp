@@ -25,9 +25,7 @@ namespace ds {
 			return hash64(x);
 		}
 	}
-	template<i128::signed_integral T> u64 hash(T x) {
-		return hash(static_cast<i128::make_signed_t<T>>(x));
-	}
+	template<i128::signed_integral T> u64 hash(T x) { return hash(static_cast<i128::make_signed_t<T>>(x)); }
 	u64 hash(const std::string &x) {
 		u64 ret = 0;
 		for (char c : x) {
@@ -44,18 +42,14 @@ namespace ds {
 		{ x != y } -> std::same_as<bool>;
 	};
 	template<hashable T> struct hasher {
-		u64 operator()(T x) {
-			return hash(x);
-		}
+		u64 operator()(T x) { return hash(x); }
 	};
 	template<class key_t, class val_t, class hr = hasher<key_t>> class HashTable {
 	private:
 		inline static hr hs;
 		u32 siz, cap;
 		std::vector<std::optional<std::pair<const key_t, val_t>>> kv;
-		u32 id(u64 x) const {
-			return static_cast<u32>(x & (cap - 1));
-		}
+		u32 id(u64 x) const { return static_cast<u32>(x & (cap - 1)); }
 		u32 key_pos(key_t k) const {
 			u32 ret = id(hs(k));
 			while (kv[ret].has_value() == true && kv[ret].value().first != k) {
@@ -65,15 +59,9 @@ namespace ds {
 		}
 	public:
 		HashTable(u32 _cap = 4194304) : siz(0), cap(_cap), kv(_cap) {}
-		u32 size() const {
-			return siz;
-		}
-		u32 capacity() const {
-			return cap;
-		}
-		bool exists(key_t k) const {
-			return kv[key_pos(k)].has_value();
-		}
+		u32 size() const { return siz; }
+		u32 capacity() const { return cap; }
+		bool exists(key_t k) const { return kv[key_pos(k)].has_value(); }
 		val_t &operator[](key_t k) {
 			u32 ind = key_pos(k);
 			if (kv[ind].has_value() == false) {
@@ -89,9 +77,7 @@ namespace ds {
 			HashTable<key_t, val_t> &par;
 		public:
 			iterator(u32 _i, HashTable<key_t, val_t> &_p) : ind(_i), par(_p) {}
-			bool operator!=(const iterator &x) {
-				return x.ind != ind;
-			}
+			bool operator!=(const iterator &x) { return x.ind != ind; }
 			iterator &operator++() {
 				assure(ind < par.cap, "iterator {} points to the end", ind);
 				do {
@@ -111,8 +97,6 @@ namespace ds {
 				return ++(iterator(0, *this));
 			}
 		}
-		iterator end() {
-			return iterator(cap, *this);
-		}
+		iterator end() { return iterator(cap, *this); }
 	};
 }

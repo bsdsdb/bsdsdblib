@@ -10,8 +10,7 @@
 using MI = numtheo::ModInt32<-1>;
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 T;
 	std::cin >> T;
 	while (T--) {

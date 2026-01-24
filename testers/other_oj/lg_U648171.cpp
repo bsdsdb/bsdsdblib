@@ -7,8 +7,7 @@
 using MI = numtheo::ModInt64<-1>;
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	bool t;
 	u64 p;
 	u32 n;

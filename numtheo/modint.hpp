@@ -33,12 +33,8 @@ namespace numtheo {
 			return P;
 		}
 		ModIntBase() : val(0) {}
-		template<i128::unsigned_integral T> ModIntBase(T v, bool need_mod = true) : val(
-			static_cast<val_t>(need_mod ? v % mod() : v)
-		) {}
-		template<i128::signed_integral T> ModIntBase(T v, bool need_mod = true) : val(
-			static_cast<val_t>(need_mod ? (v < 0 ? mod() - (-v) % mod() : v % mod()) : v)
-		) {}
+		template<i128::unsigned_integral T> ModIntBase(T v, bool need_mod = true) : val(static_cast<val_t>(need_mod ? v % mod() : v)) {}
+		template<i128::signed_integral T> ModIntBase(T v, bool need_mod = true) : val(static_cast<val_t>(need_mod ? (v < 0 ? mod() - (-v) % mod() : v % mod()) : v)) {}
 		void read_by_mod() {
 			std::string s;
 			std::cin >> s;
@@ -51,9 +47,7 @@ namespace numtheo {
 			in >> x.val;
 			return in;
 		}
-		val_t value() const {
-			return val;
-		}
+		val_t value() const { return val; }
 		Derived operator+(Derived x) const {
 			Derived ret;
 			ret.val = val + x.val;
@@ -89,19 +83,13 @@ namespace numtheo {
 			}
 			return static_cast<Derived&>(*this);
 		}
-		Derived operator*(Derived x) const {
-			return static_cast<Derived>(static_cast<mul_t>(val) * x.val);
-		}
+		Derived operator*(Derived x) const { return static_cast<Derived>(static_cast<mul_t>(val) * x.val); }
 		Derived &operator*=(Derived x) {
 			val = static_cast<val_t>(static_cast<mul_t>(val) * x.val % mod());
 			return static_cast<Derived&>(*this);
 		}
-		friend bool operator==(Derived x, Derived y) {
-			return x.val == y.val;
-		}
-		friend bool operator!=(Derived x, Derived y) {
-			return x.val != y.val;
-		}
+		friend bool operator==(Derived x, Derived y) { return x.val == y.val; }
+		friend bool operator!=(Derived x, Derived y) { return x.val != y.val; }
 	};
 	template<i64 P, bool _64> class ModIntPr : public ModIntBase<ModIntPr<P, _64>, P, _64> { // P prime
 	private:

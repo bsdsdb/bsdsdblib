@@ -7,8 +7,7 @@
 using MIP = numtheo::ModIntPr32<998244353>;
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	numtheo::O1gcd_preproc(1000000);
 	u32 n;
 	std::cin >> n;

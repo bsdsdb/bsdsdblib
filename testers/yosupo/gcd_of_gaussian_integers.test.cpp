@@ -8,15 +8,14 @@
 using GI = numtheo::GaussInt<i64>;
 
 int main() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr), std::cout.tie(nullptr);
+	ioopt();
 	u32 T;
 	std::cin >> T;
 	while (T--) {
 		i32 a, b, c, d;
 		std::cin >> a >> b >> c >> d;
-		(numtheo::gauss_gcd(GI(a, b), GI(c, d))).outp_onlyspace();
-		std::cout << '\n';
+		GI ans = numtheo::gauss_gcd(GI(a, b), GI(c, d));
+		std::cout << ans.re << ' ' << ans.im << '\n';
 	}
 	return 0;
 }
