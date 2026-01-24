@@ -6,7 +6,7 @@
 #include <iostream>
 #include <type_traits>
 
-#ifdef DEBUG
+#ifdef BSDSDBDEBUG
 #include <format>
 #include <string>
 #endif
@@ -79,7 +79,7 @@ namespace i128 {
 }
 
 #define __func_str__ static_cast<std::string>(__func__)
-#ifdef DEBUG
+#ifdef BSDSDBDEBUG
 #define warn(cond, str, ...) do { \
 	if (!(cond)) { \
 		std::cerr << std::format("[WARNING/{}] " str, __func__ __VA_OPT__(,) __VA_ARGS__) << std::endl; \
