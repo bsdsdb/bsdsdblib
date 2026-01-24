@@ -9,7 +9,7 @@ int main() {
 	std::cin.tie(nullptr), std::cout.tie(nullptr);
 	u32 q;
 	std::cin >> q;
-	static ds::hash_table<u64, u64> t;
+	static ds::HashTable<u64, u64> t;
 	while (q--) {
 		u32 o;
 		u64 k, v;

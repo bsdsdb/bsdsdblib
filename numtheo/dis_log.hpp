@@ -20,7 +20,7 @@ namespace numtheo {
 		using mul_t = MIP::mul_t;
 		u32 B = static_cast<u32>(std::sqrt(MIP::mod())) + 2;
 		MIP a_to_y = 1;
-		ds::hash_table<val_t, val_t> bay2y;
+		ds::HashTable<val_t, val_t> bay2y;
 		for (u32 y = 0; y < B; ++y, a_to_y *= a) {
 			bay2y[(b * a_to_y).value()] = y;
 		}
@@ -40,7 +40,7 @@ namespace numtheo {
 		u32 B = static_cast<u32>(std::sqrt(MIP::mod() / b.size())) + 2;
 		u32 xlim = static_cast<u32>(MIP::mod() / B) + 3;
 		MIP a_to_B = qpow(a, B, MIP(1, false)), a_to_B_to_x = a_to_B;
-		ds::hash_table<val_t, val_t> aBx2x;
+		ds::HashTable<val_t, val_t> aBx2x;
 		for (u32 x = 1; x <= xlim; ++x, a_to_B_to_x *= a_to_B) {
 			if (aBx2x.exists(a_to_B_to_x.value()) == false) {
 				aBx2x[a_to_B_to_x.value()] = x;
@@ -75,7 +75,7 @@ namespace numtheo {
 		using mul_t = MI::mul_t;
 		u32 B = static_cast<u32>(std::sqrt(MI::mod())) + 1;
 		MI a_to_B = qpow(a, B, MI(1, false)), a_to_Bx = a_to_B;
-		ds::hash_table<val_t, std::pair<val_t, val_t>> aBx2x;
+		ds::HashTable<val_t, std::pair<val_t, val_t>> aBx2x;
 		for (u32 x = 1; x <= B; ++x, a_to_Bx *= a_to_B) {
 			if (aBx2x[a_to_Bx.value()].first == 0) {
 				aBx2x[a_to_Bx.value()].first = x;
@@ -115,7 +115,7 @@ namespace numtheo {
 		u32 B = static_cast<u32>(std::sqrt(phi(MI::mod()) / b.size())) + 2;
 		u32 xlim = static_cast<u32>(MI::mod() / B) + 3;
 		MI a_to_B = qpow(a, B, MI(1, false)), a_to_Bx = a_to_B;
-		ds::hash_table<val_t, std::pair<val_t, val_t>> aBx2x;
+		ds::HashTable<val_t, std::pair<val_t, val_t>> aBx2x;
 		for (u32 x = 1; x <= xlim; ++x, a_to_Bx *= a_to_B) {
 			if (aBx2x[a_to_Bx.value()].first == 0) {
 				aBx2x[a_to_Bx.value()].first = x;
