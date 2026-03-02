@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp//problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 // #define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 
 #include <iostream>

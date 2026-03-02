@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp//problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 // #define PROBLEM "https://judge.yosupo.jp/problem/gcd_of_gaussian_integers"
 
 #include <iostream>

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp//problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 // #define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
 
 #include <iostream>
