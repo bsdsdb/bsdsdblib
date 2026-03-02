@@ -1,4 +1,5 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/two_square_sum"
+#define PROBLEM "https://judge.yosupo.jp//problem/aplusb"
+// #define PROBLEM "https://judge.yosupo.jp/problem/two_square_sum"
 
 #include <iostream>
 
