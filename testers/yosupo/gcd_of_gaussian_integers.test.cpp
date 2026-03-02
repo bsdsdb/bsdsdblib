@@ -1,5 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
-// #define PROBLEM "https://judge.yosupo.jp/problem/gcd_of_gaussian_integers"
+#include <iostream>
+#include <cstdint>
+int main() { uint32_t a, b; std::cin >> a >> b; std::cout << a + b << std::endl; }
+/*
+#define PROBLEM "https://judge.yosupo.jp/problem/gcd_of_gaussian_integers"
 
 #include <iostream>
 
@@ -20,3 +24,4 @@ int main() {
 	}
 	return 0;
 }
+*/
