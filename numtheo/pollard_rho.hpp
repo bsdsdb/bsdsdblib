@@ -20,21 +20,20 @@ namespace numtheo {
 			return x == 2;
 		}
 		T t = (std::is_same_v<T, u64> ? __builtin_ctzll(x - 1) : __builtin_ctz(x - 1)), u = (x - 1) >> t;
-		std::vector<T> a_list;
+		std::vector<MI> a_list;
 		if (std::is_same_v<T, u64>) {
 			a_list = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
 		} else {
 			a_list = {2, 7, 61};
 		}
-		for (T a : a_list) {
-			a %= x;
-			if (a == 0) {
+		for (MI a : a_list) {
+			if (a == MI(0, false)) {
 				continue;
 			}
-			if (std::gcd(a, x) != 1) {
+			if (std::gcd(a.value(), x) != 1) {
 				return false;
 			}
-			MI v = qpow(MI(a, false), u, MI(1, false));
+			MI v = qpow(a, u, MI(1, false));
 			if (v.value() == 1) {
 				continue;
 			}

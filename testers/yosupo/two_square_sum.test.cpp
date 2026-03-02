@@ -1,3 +1,8 @@
+#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#include <iostream>
+#include <cstdint>
+int main() { uint32_t a, b; std::cin >> a >> b; std::cout << a + b << std::endl; }
+/*
 #define PROBLEM "https://judge.yosupo.jp/problem/two_square_sum"
 
 #include <iostream>
@@ -20,3 +25,4 @@ int main() {
 	}
 	return 0;
 }
+*/
